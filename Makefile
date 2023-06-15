@@ -1,4 +1,4 @@
-LIBFTPRINTF_DIR = ../
+LIBFTPRINTF_DIR = ../../
 ERROR_LIMIT = 0
 
 SHELL = /bin/sh
@@ -6,8 +6,8 @@ SHELL = /bin/sh
 # I'm not proud of this
 TESTS = $(shell for ((i=1;i<=2000;i++)); do echo "$$i "; done)
 
-NAME = tester
-LIBTEST = libtest/libtest.a
+NAME = ./tester
+LIBTEST = ./libtest/libtest.a
 LIBFTPRINTF = ${LIBFTPRINTF_DIR}/libftprintf.a
 
 SRC_DIR = ./src
@@ -35,7 +35,7 @@ SANITIZE = -fsanitize=address
 
 UNAME = ${shell uname -s}
 ifeq (${UNAME}, Darwin)
-	SRCS_FILES := ${SRCS_FILES} malloc_count.c 
+	SRCS_FILES := ${SRCS_FILES} malloc_count.c
 endif
 
 CC = clang ${CFLAGS}
