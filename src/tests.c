@@ -156,6 +156,7 @@ int run_tests(int test_cat)
 	PRINTF(("the '%%%%' is used to print a %% in printf"));
 	PRINTF(("%%%%%%%%%%%%%%%%"));
 	PRINTF(("%%c%%s%%p%%d%%i%%u%%x%%X%%"));
+	PRINTF(("this is a string ending in %%, but with no specifier! %"));
 
 	right_cat = test_cat ? test_cat & CAT_MANDATORY : 1;
 	describe("\nmix");
