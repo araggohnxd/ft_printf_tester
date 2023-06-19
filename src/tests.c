@@ -612,6 +612,12 @@ int run_tests(int test_cat)
 	PRINTF(("%--4.1s %s %------------------9.3s of %s of %-5.7s", "for", "the", "goooood", "aaall", "us"));
 	PRINTF(("%--.sp--.su kkkk", "pegadinha po"));
 	PRINTF(("%-9sScience!", "-42"));
+	PRINTF(("%-9sScience!", null_str));
+	PRINTF(("We %-s what we %8s, %-2s we %-20s", null_str, null_str, null_str, null_str));
+	PRINTF(("%--4s %s %------------------9s of %s of %-5s", null_str, null_str, null_str, null_str, null_str));
+	PRINTF(("%--4.1s %s %------------------9.3s of %s of %-5.7s", null_str, null_str, null_str, null_str, null_str));
+	PRINTF(("%--.sp--.su kkkk", null_str));
+	PRINTF(("%-9sScience!", null_str));
 
 	right_cat = (g_all_bonus & CAT_BONUS_1) ? 1
 			: test_cat ? (test_cat & CAT_P && test_cat & CAT_BONUS_1)
@@ -1345,6 +1351,36 @@ int run_tests(int test_cat)
 	PRINTF(("%   d", 2147837));
 	PRINTF(("%  d", (int)-2147486));
 	PRINTF(("%  d this is %d getting% di hard :/", (int)-2147486, -2, 42));
+	PRINTF(("%42 d", 42));
+	PRINTF(("% 42d", 42));
+	PRINTF(("% .42d", 42));
+	PRINTF(("%0 d", 42));
+	PRINTF(("% 0d", 42));
+	PRINTF(("% .0d", 42));
+	PRINTF(("%1 d", 42));
+	PRINTF(("% 1d", 42));
+	PRINTF(("% .1d", 42));
+	PRINTF(("%42 d", 1234));
+	PRINTF(("% 42d", 1234));
+	PRINTF(("% .42d", 1234));
+	PRINTF(("%0 d", 1234));
+	PRINTF(("% 0d", 1234));
+	PRINTF(("% .0d", 1234));
+	PRINTF(("%1 d", 1234));
+	PRINTF(("% 1d", 1234));
+	PRINTF(("% .1d", 1234));
+	PRINTF(("%4 d", 1234));
+	PRINTF(("% 4d", 1234));
+	PRINTF(("% .4d", 1234));
+	PRINTF(("%5 d", 1234));
+	PRINTF(("% 5d", 1234));
+	PRINTF(("% .5d", 1234));
+	PRINTF(("%6 d", 1234));
+	PRINTF(("% 6d", 1234));
+	PRINTF(("% .6d", 1234));
+	PRINTF(("%3 d", 1234));
+	PRINTF(("% 3d", 1234));
+	PRINTF(("% .3d", 1234));
 
 	right_cat = (g_all_bonus & CAT_BONUS_2) ? 1
 			: test_cat ? (test_cat & CAT_I && test_cat & CAT_BONUS_2)
@@ -1387,6 +1423,36 @@ int run_tests(int test_cat)
 	PRINTF(("%+++d", 2147837));
 	PRINTF(("%++d", (int)-2147486));
 	PRINTF(("%++d this is %d getting%+di hard :/", (int)-2147486, -2, 42));
+	PRINTF(("%42+d", 42));
+	PRINTF(("%+42d", 42));
+	PRINTF(("%+.42d", 42));
+	PRINTF(("%0+d", 42));
+	PRINTF(("%+0d", 42));
+	PRINTF(("%+.0d", 42));
+	PRINTF(("%1+d", 42));
+	PRINTF(("%+1d", 42));
+	PRINTF(("%+.1d", 42));
+	PRINTF(("%42+d", 1234));
+	PRINTF(("%+42d", 1234));
+	PRINTF(("%+.42d", 1234));
+	PRINTF(("%0+d", 1234));
+	PRINTF(("%+0d", 1234));
+	PRINTF(("%+.0d", 1234));
+	PRINTF(("%1+d", 1234));
+	PRINTF(("%+1d", 1234));
+	PRINTF(("%+.1d", 1234));
+	PRINTF(("%4+d", 1234));
+	PRINTF(("%+4d", 1234));
+	PRINTF(("%+.4d", 1234));
+	PRINTF(("%5+d", 1234));
+	PRINTF(("%+5d", 1234));
+	PRINTF(("%+.5d", 1234));
+	PRINTF(("%6+d", 1234));
+	PRINTF(("%+6d", 1234));
+	PRINTF(("%+.6d", 1234));
+	PRINTF(("%3+d", 1234));
+	PRINTF(("%+3d", 1234));
+	PRINTF(("%+.3d", 1234));
 
 	right_cat = (g_all_bonus & CAT_BONUS_2) ? 1
 			: test_cat ? (test_cat & CAT_I && test_cat & CAT_BONUS_2)
@@ -1408,6 +1474,22 @@ int run_tests(int test_cat)
 	PRINTF(("%+++i", 2147837));
 	PRINTF(("%++i", (int)-2147486));
 	PRINTF(("%++i this is %i getting%+ix hard :/", (int)-2147486, -2, 42));
+
+	right_cat = (g_all_bonus & CAT_BONUS_2) ? 1
+			: test_cat ? (test_cat & CAT_I && test_cat & CAT_BONUS_2)
+			: 1;
+	describe("\n%d with some crazy shit");
+
+	PRINTF(("%0- 10.d", 1234));
+	PRINTF(("%0+ 10.d", 1234));
+	PRINTF(("%0- 10.d", -1234));
+	PRINTF(("%0+ 10.d", -1234));
+	PRINTF(("%0- 10d", 1234));
+	PRINTF(("%0+ 10d", 1234));
+	PRINTF(("%0- 10d", -1234));
+	PRINTF(("%0+ 10d", -1234));
+	PRINTF(("%0 10d", 1234));
+	PRINTF(("%0 10d", -1234));
 
 	return (0);
 }

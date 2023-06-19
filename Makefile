@@ -73,7 +73,7 @@ ${TESTS}: ${NAME}
 _bonus:
 	make CFLAGS="${PRINTF_FLAGS}" -C ${LIBFTPRINTF_DIR} bonus
 
-bonus: _bonus ${NAME}
+bonus: ${NAME}
 
 bonusnosan: SANITIZE :=
 bonusnosan: _bonus ${NAME}
